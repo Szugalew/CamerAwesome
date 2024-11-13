@@ -26,7 +26,9 @@
 }
 
 + (CGSize)getSizeForPresset:(NSString *)presset {
-  if (presset == AVCaptureSessionPreset3840x2160) {
+  if (presset == AVCaptureSessionPresetPhoto) {
+    return CGSizeMake(4032, 3024);
+  } else if (presset == AVCaptureSessionPreset3840x2160) {
     return CGSizeMake(3840, 2160);
   } else if (presset == AVCaptureSessionPreset1920x1080) {
     return CGSizeMake(1920, 1080);

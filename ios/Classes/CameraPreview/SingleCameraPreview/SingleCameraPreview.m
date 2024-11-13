@@ -105,7 +105,7 @@
 /// Assign the default preview qualities
 - (void)setBestPreviewQuality {
   NSArray *qualities = [CameraQualities captureFormatsForDevice:_captureDevice];
-  PreviewSize *firstPreviewSize = [qualities count] > 0 ? qualities.lastObject : [PreviewSize makeWithWidth:@3840 height:@2160];
+  PreviewSize *firstPreviewSize = [qualities count] > 0 ? qualities.lastObject : [PreviewSize makeWithWidth:@4032 height:@3024];
   
   CGSize firstSize = CGSizeMake([firstPreviewSize.width floatValue], [firstPreviewSize.height floatValue]);
   [self setCameraPresset:firstSize];
@@ -188,11 +188,11 @@
     // Compute the best quality supported by the camera device
     presetSelected = [CameraQualities selectVideoCapturePresset:_captureSession device:_captureDevice];
   }
-  [_captureSession setSessionPreset:presetSelected];
+  [_captureSession setSessionPreset:AVCaptureSessionPresetPhoto];
   _currentPresset = presetSelected;
   
   // Get preview size according to presset selected
-  _currentPreviewSize = [CameraQualities getSizeForPresset:presetSelected];
+  _currentPreviewSize = CGSizeMake(4032, 3024);//[CameraQualities getSizeForPresset:presetSelected];
   
   [_videoController setPreviewSize:_currentPreviewSize];
 }
@@ -206,7 +206,7 @@
 - (CGFloat)getMaxZoom {
   CGFloat maxZoom = _captureDevice.activeFormat.videoMaxZoomFactor;
   // Not sure why on iPhone 14 Pro, zoom at 90 not working, so let's block to 50 which is very high
-  return maxZoom > 50.0 ? 50.0 : maxZoom;
+  return maxZoom > 30.0 ? 30.0 : maxZoom;
 }
 
 /// Dispose camera inputs & outputs

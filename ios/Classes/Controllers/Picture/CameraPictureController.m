@@ -33,7 +33,9 @@
   _mirrorFrontCamera = mirrorFrontCamera;
   
   if (aspectRatio == Ratio4_3) {
-    _aspectRatio = 4.0/3.0;
+    //_aspectRatio = 4.0/3.0;
+    //width/height
+    _aspectRatio = 3.0/4.0;
   } else if(aspectRatio == Ratio16_9) {
     _aspectRatio = 16.0/9.0;
   } else {
@@ -111,6 +113,7 @@ previewPhotoSampleBuffer:(CMSampleBufferRef)previewPhotoSampleBuffer
   
   float originalImageAspectRatio = originalWidth / originalHeight;
   
+  // Todo this assumes the aspect ratio is width/height
   float outputWidth = originalWidth;
   float outputHeight = originalHeight;
   if (originalImageAspectRatio != _aspectRatio) {

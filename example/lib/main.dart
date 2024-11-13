@@ -68,6 +68,7 @@ class CameraPage extends StatelessWidget {
                 debugPrint('Unknown event: $event');
             }
           },
+
           saveConfig: SaveConfig.photoAndVideo(
             initialCaptureMode: CaptureMode.photo,
             photoPathBuilder: (sensors) async {
