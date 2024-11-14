@@ -16,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 + (AVCaptureSessionPreset)selectVideoCapturePresset:(AVCaptureSession *)session device:(AVCaptureDevice *)device;
 + (CGSize)getSizeForPresset:(NSString *)presset;
 + (NSArray *)captureFormatsForDevice:(AVCaptureDevice *)device;
++ (NSArray<NSNumber *> *)zoomFactorsForDevice:(AVCaptureDevice *)device;
++ (NSNumber *)defaultZoomFactorForDevice:(AVCaptureDevice *)device;
 
 @end
 

@@ -100,4 +100,23 @@
   return qualities;
 }
 
++ (NSArray<NSNumber *> *)zoomFactorsForDevice:(AVCaptureDevice *)device  {
+  return device.virtualDeviceSwitchOverVideoZoomFactors;
+}
+
++ (NSNumber *)defaultZoomFactorForDevice:(AVCaptureDevice *)device  {
+  if (device.deviceType == AVCaptureDeviceTypeBuiltInWideAngleCamera) {
+    return @1; // default
+  }
+
+  NSArray<NSNumber *> *zoomFactors = [self zoomFactorsForDevice:device];
+  if (device.deviceType == AVCaptureDeviceTypeBuiltInTripleCamera) {
+    return zoomFactors[1]; // wide, default, zoom
+  } else if (device.deviceType == AVCaptureDeviceTypeBuiltInDualWideCamera) {
+    return zoomFactors[1]; // wide, default
+  } else {
+    return @1; // Unknown device
+  }
+}
+
 @end

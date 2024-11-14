@@ -286,6 +286,8 @@ NSObject<FlutterMessageCodec> *CameraInterfaceGetCodec(void);
 - (nullable NSArray<PigeonSensorTypeDevice *> *)getFrontSensorsWithError:(FlutterError *_Nullable *_Nonnull)error;
 /// @return `nil` only when `error != nil`.
 - (nullable NSArray<PigeonSensorTypeDevice *> *)getBackSensorsWithError:(FlutterError *_Nullable *_Nonnull)error;
+- (nullable NSArray<NSNumber *> *)getSensorSwitchOverZoomFactorsWithError:(FlutterError *_Nullable *_Nonnull)error;
+- (nullable NSNumber *)getDefaultZoomFactorWithError:(FlutterError *_Nullable *_Nonnull)error;
 /// @return `nil` only when `error != nil`.
 - (nullable NSNumber *)startWithError:(FlutterError *_Nullable *_Nonnull)error;
 /// @return `nil` only when `error != nil`.

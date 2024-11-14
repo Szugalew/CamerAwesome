@@ -715,6 +715,14 @@ FlutterEventSink physicalButtonEventSink;
   return [SensorsController getSensors:AVCaptureDevicePositionBack];
 }
 
+- (nullable NSArray<NSNumber *> *)getSensorSwitchOverZoomFactorsWithError:(FlutterError *_Nullable *_Nonnull)error {
+  return [CameraQualities zoomFactorsForDevice:self.camera.captureDevice];
+}
+
+- (nullable NSNumber *)getDefaultZoomFactorWithError:(FlutterError *_Nullable *_Nonnull)error {
+  return [CameraQualities defaultZoomFactorForDevice:self.camera.captureDevice];
+}
+
 - (void)setSensorSensors:(nonnull NSArray<PigeonSensor *> *)sensors error:(FlutterError * _Nullable __autoreleasing * _Nonnull)error {
   if (self.camera == nil && self.multiCamera == nil) {
     *error = [FlutterError errorWithCode:@"CAMERA_MUST_BE_INIT" message:@"init must be call before start" details:nil];
