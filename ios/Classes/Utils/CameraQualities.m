@@ -110,10 +110,12 @@
   }
 
   NSArray<NSNumber *> *zoomFactors = [self zoomFactorsForDevice:device];
+  /// Note the first lens in a multi camera device does not have a zoom factor
+  /// in the list. Its zoom factor is always 1.
   if (device.deviceType == AVCaptureDeviceTypeBuiltInTripleCamera) {
-    return zoomFactors[1]; // wide, default, zoom
+    return zoomFactors[0]; // [default lens factor, zoomed in lens factor]
   } else if (device.deviceType == AVCaptureDeviceTypeBuiltInDualWideCamera) {
-    return zoomFactors[1]; // wide, default
+    return zoomFactors[0]; // [default lens factor]
   } else {
     return @1; // Unknown device
   }

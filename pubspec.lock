@@ -5,23 +5,18 @@ packages:
     dependency: transitive
     description:
       name: _fe_analyzer_shared
-      sha256: f256b0c0ba6c7577c15e2e4e114755640a875e885099367bf6e012b19314c834
+      sha256: ae92f5d747aee634b87f89d9946000c2de774be1d6ac3e58268224348cd0101a
       url: "https://pub.dev"
     source: hosted
-    version: "72.0.0"
-  _macros:
-    dependency: transitive
-    description: dart
-    source: sdk
-    version: "0.3.2"
+    version: "61.0.0"
   analyzer:
     dependency: transitive
     description:
       name: analyzer
-      sha256: b652861553cd3990d8ed361f7979dc6d7053a9ac8843fa73820ab68ce5410139
+      sha256: ea3d8652bda62982addfd92fdc2d0214e5f82e43325104990d4f4c4a2a313562
       url: "https://pub.dev"
     source: hosted
-    version: "6.7.0"
+    version: "5.13.0"
   archive:
     dependency: transitive
     description:
@@ -54,22 +49,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.1"
-  built_collection:
-    dependency: transitive
-    description:
-      name: built_collection
-      sha256: "376e3dd27b51ea877c28d525560790aee2e6fbb5f20e2f85d5081027d94e2100"
-      url: "https://pub.dev"
-    source: hosted
-    version: "5.1.1"
-  built_value:
-    dependency: transitive
-    description:
-      name: built_value
-      sha256: c7913a9737ee4007efedaffc968c049fd0f3d0e49109e778edc10de9426005cb
-      url: "https://pub.dev"
-    source: hosted
-    version: "8.9.2"
   carousel_slider:
     dependency: "direct main"
     description:
@@ -94,14 +73,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.1.1"
-  code_builder:
-    dependency: transitive
-    description:
-      name: code_builder
-      sha256: f692079e25e7869c14132d39f223f8eec9830eb76131925143b2129c4bb01b37
-      url: "https://pub.dev"
-    source: hosted
-    version: "4.10.0"
   collection:
     dependency: "direct main"
     description:
@@ -142,14 +113,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.0.3"
-  dart_style:
-    dependency: transitive
-    description:
-      name: dart_style
-      sha256: "99e066ce75c89d6b29903d788a7bb9369cf754f7b24bf70bf4b6d6d6b26853b9"
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.3.6"
   fake_async:
     dependency: transitive
     description:
@@ -174,14 +137,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "7.0.0"
-  fixnum:
-    dependency: transitive
-    description:
-      name: fixnum
-      sha256: "25517a4deb0c03aa0f32fd12db525856438902d9c16536311e76cdc57b31d7d1"
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.1.0"
   flutter:
     dependency: "direct main"
     description: flutter
@@ -248,14 +203,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.0.0"
-  macros:
-    dependency: transitive
-    description:
-      name: macros
-      sha256: "0acaed5d6b7eab89f63350bccd82119e6c602df0f391260d0e32b5e23db79536"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.1.2-main.4"
   matcher:
     dependency: transitive
     description:
@@ -364,10 +311,10 @@ packages:
     dependency: "direct dev"
     description:
       name: pigeon
-      sha256: c322a8dcb19cd632febb8d025a67daab3c2c0475b8b79885f5a6fcc7dc6ef884
+      sha256: "6b270420d0808903f4c2d848aa96f8c12e6275b15989270f24e552939642212f"
       url: "https://pub.dev"
     source: hosted
-    version: "21.1.0"
+    version: "9.2.5"
   platform:
     dependency: transitive
     description:

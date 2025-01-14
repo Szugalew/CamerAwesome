@@ -44,11 +44,6 @@
   
   [self initCameraPreview:sensor];
   
-  [_captureConnection setAutomaticallyAdjustsVideoMirroring:NO];
-  if (mirrorFrontCamera && [_captureConnection isVideoMirroringSupported]) {
-    [_captureConnection setVideoMirrored:mirrorFrontCamera];
-  }
-  
   _captureMode = captureMode;
   
   // By default enable auto flash mode

@@ -1075,7 +1075,7 @@ class CameraInterface {
         message: 'Host platform returned null value for non-null return value.',
       );
     } else {
-      return (replyList[0] as List<num?>?)!;
+      return (replyList[0] as List<Object?>?)!.cast<num>();
     }
   }
 

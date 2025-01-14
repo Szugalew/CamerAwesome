@@ -391,6 +391,14 @@ class CamerawesomePlugin {
     return CameraInterface().getMinZoom();
   }
 
+  static Future<num> getDefaultZoomFactor() {
+    return CameraInterface().getDefaultZoomFactor();
+  }
+
+  static Future<List<num?>> getSensorSwitchOverZoomFactors() {
+    return CameraInterface().getSensorSwitchOverZoomFactors();
+  }
+
   static Future<bool> isMultiCamSupported() {
     return CameraInterface().isMultiCamSupported();
   }

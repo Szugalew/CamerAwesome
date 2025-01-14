@@ -213,6 +213,9 @@ data class CameraXState(
 
             if (currentCaptureMode == CaptureModes.PHOTO) {
                 val imageCapture = ImageCapture.Builder().setCameraSelector(cameraSelector)
+                //.setCaptureMode(ImageCapture.CAPTURE_MODE_MINIMIZE_LATENCY)
+                    //.setCaptureMode(ImageCapture.CAPTURE_MODE_ZERO_SHUTTER_LAG)
+                .setJpegQuality(80)
 //                .setJpegQuality(100)
                     .apply {
                         //photoSize?.let { setTargetResolution(it) }

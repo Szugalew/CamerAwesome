@@ -618,7 +618,7 @@ FlutterEventSink physicalButtonEventSink;
 }
 
 - (nullable NSNumber *)getMinZoomWithError:(FlutterError * _Nullable __autoreleasing * _Nonnull)error {
-  return @(0);
+  return @(1);
 }
 
 - (void)setZoomZoom:(nonnull NSNumber *)zoom error:(FlutterError * _Nullable __autoreleasing * _Nonnull)error {
