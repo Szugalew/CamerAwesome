@@ -269,12 +269,20 @@
 
 /// Set zoom level
 - (void)setZoom:(float)value error:(FlutterError * _Nullable __autoreleasing * _Nonnull)error {
-  CGFloat maxZoom = [self getMaxZoom];
-  CGFloat scaledZoom = value * (maxZoom - 1.0f) + 1.0f;
+    NSNumber *defaultZoom = [CameraQualities defaultZoomFactorForDevice:_captureDevice];
+    CGFloat minZoomFactor = 1.0f / [defaultZoom doubleValue];
+    CGFloat maxZoomFactor = [self getMaxZoom] / [defaultZoom doubleValue];
+    /// These calculations are the same as the ones we do in dart to get the zoom factor from
+    /// the linear zoom
+    CGFloat zoomFactor = minZoomFactor * pow(2, value * log2(maxZoomFactor / minZoomFactor));
+    
+    /// The range of ios zoom values goes from 1 -> default zoom -> max zoom
+    /// So we need to convert so the zoomfactor starts at 1 rather than minZoomFactor
+    CGFloat convertedZoomFactor = zoomFactor / minZoomFactor;
   
   NSError *zoomError;
   if ([_captureDevice lockForConfiguration:&zoomError]) {
-    _captureDevice.videoZoomFactor = scaledZoom;
+    _captureDevice.videoZoomFactor = convertedZoomFactor;
     [_captureDevice unlockForConfiguration];
   } else {
     *error = [FlutterError errorWithCode:@"ZOOM_NOT_SET" message:@"can't set the zoom value" details:[zoomError localizedDescription]];
